@@ -26,11 +26,11 @@ export default function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
     // Handle registration logic here
-    if (!validatePassword(password)) {
-      setPasswordError('Password must be at least 8 characters long and include an uppercase letter, a number, and a special character.');
-      return;
-    }
-    setPasswordError('');
+    // if (!validatePassword(password)) {
+    //   setPasswordError('Password must be at least 8 characters long and include an uppercase letter, a number, and a special character.');
+    //   return;
+    // }
+    // setPasswordError('');
 
     // create the user 
     try {
@@ -163,73 +163,3 @@ export default function Register() {
     </div>
   );
 }
-
-
-
-
-
-// import { useState } from 'react';
-// import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-// import { auth } from '@/firebase/config';
-
-// export default function SignUp() {
-//   const [email, setEmail] = useState('');
-//   const [password, setPassword] = useState('');
-
-//   const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     try {
-//       console.log("data: ", email, password);
-//       const res = await createUserWithEmailAndPassword(email, password);
-//       console.log("User created successfully:", {res});
-//       setEmail('');
-//       setPassword('');
-//     } catch (error) {
-//       console.log("Error creating user:", error)
-//     }
-//   };
-
-//   return (
-//     <div className="min-h-screen bg-gray-900 flex items-center justify-center">
-//       <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
-//         <h1 className="text-2xl font-bold text-white mb-6">Sign Up</h1>
-//         <form onSubmit={handleSubmit}>
-//           <div className="mb-4">
-//             <label className="block text-gray-400 mb-2" htmlFor="email">
-//               Email
-//             </label>
-//             <input
-//               type="email"
-//               id="email"
-//               value={email}
-//               onChange={(e) => setEmail(e.target.value)}
-//               className="w-full p-3 border border-gray-600 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-//               required
-//             />
-//           </div>
-//           <div className="mb-6">
-//             <label className="block text-gray-400 mb-2" htmlFor="password">
-//               Password
-//             </label>
-//             <input
-//               type="password"
-//               id="password"
-//               value={password}
-//               onChange={(e) => setPassword(e.target.value)}
-//               className="w-full p-3 border border-gray-600 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-//               required
-//             />
-//           </div>
-//           <button
-//             type="submit"
-//             className="w-full py-3 bg-blue-500 hover:bg-blue-600 rounded text-white font-bold focus:outline-none focus:ring-2 focus:ring-blue-500"
-//           >
-//             Sign Up
-//           </button>
-//         </form>
-//       </div>
-//     </div>
-//   );
-// }
